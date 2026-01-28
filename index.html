@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usability Heuristics Guide</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="header">
+        <div class="logo">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="3" width="7" height="7"></rect>
+                <rect x="14" y="3" width="7" height="7"></rect>
+                <rect x="3" y="14" width="7" height="7"></rect>
+                <rect x="14" y="14" width="7" height="7"></rect>
+            </svg>
+            <span>HEURISTICS GUIDE</span>
+        </div>
+        <div class="logo-separator"></div>
+    </div>
+
+    <div class="container">
+        <div class="title-section">
+            <div class="title-group">
+                <h1>USABILITY</h1>
+                <h2>Heuristics</h2>
+            </div>
+            <p class="intro">A curated guide to Jakob Nielsen's Usability Heuristics. These ten broad rules of thumb
+                define the standard for human-computer interaction. Hover over each cell to explore the logic behind
+                seamless user experiences.</p>
+        </div>
+
+        <div class="fisheye-menu" id="fisheyeMenu">
+            <div class="menu-item" data-heuristic="1">
+                <div class="background-number">01.</div>
+                <div class="menu-label">UH#01</div>
+                <div class="menu-title">VISIBILITY OF SYSTEM STATUS</div>
+                <div class="menu-details">
+                    <div class="highlight-box">
+                        <p>The design should always keep users informed about what is going on through appropriate
+                            feedback within a reasonable time.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-item" data-heuristic="2">
+                <div class="background-number">02.</div>
+                <div class="menu-label">UH#02</div>
+                <div class="menu-title">MATCH BETWEEN SYSTEMS AND REAL WORLD</div>
+                <div class="menu-details">
+                    <div class="highlight-box">
+                        <p>The design should speak the users'
+                            language. Use words, phrases, and
+                            concepts familiar to the user, rather
+                            than internal jargon.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-item" data-heuristic="3">
+                <div class="background-number">03.</div>
+                <div class="menu-label">UH#03</div>
+                <div class="menu-title">USER CONTROL AND FREEDOM</div>
+                <div class="menu-details">
+                    <div class="highlight-box">
+                        <p>Users often choose system functions by mistake and will need a clearly marked "emergency
+                            exit" to leave the unwanted state.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-item" data-heuristic="4">
+                <div class="background-number">04.</div>
+                <div class="menu-label">UH#04</div>
+                <div class="menu-title">CONSISTENCY AND STANDARDS</div>
+                <div class="menu-details">
+                    <div class="highlight-box">
+                        <p>Users should not have to wonder whether different words, situations, or actions mean the same
+                            thing.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-item" data-heuristic="5">
+                <div class="background-number">05.</div>
+                <div class="menu-label">UH#05</div>
+                <div class="menu-title">ERROR PREVENTION</div>
+                <div class="menu-details">
+                    <div class="highlight-box">
+                        <p>Even better than good error messages is a careful design which prevents a problem from
+                            occurring in the first place.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-item" data-heuristic="6">
+                <div class="background-number">06.</div>
+                <div class="menu-label">UH#06</div>
+                <div class="menu-title">RECOGNITION RATHER THAN RECALL</div>
+                <div class="menu-details">
+                    <div class="highlight-box">
+                        <p>Make objects, actions, and options visible. The user should not have to remember information
+                            from one part of the dialogue to another.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-item" data-heuristic="7">
+                <div class="background-number">07.</div>
+                <div class="menu-label">UH#07</div>
+                <div class="menu-title">FLEXIBILITY AND EFFICIENCY OF USE</div>
+                <div class="menu-details">
+                    <div class="highlight-box">
+                        <p>Accelerators — unseen by the novice user — may often speed up the interaction for the expert
+                            user.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-item" data-heuristic="8">
+                <div class="background-number">08.</div>
+                <div class="menu-label">UH#08</div>
+                <div class="menu-title">AESTHETIC AND MINIMALISTIC DESIGN</div>
+                <div class="menu-details">
+                    <div class="highlight-box">
+                        <p>Dialogues should not contain information which is irrelevant or rarely needed. Every extra
+                            unit of information competes with the relevant units.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-item" data-heuristic="9">
+                <div class="background-number">09.</div>
+                <div class="menu-label">UH#09</div>
+                <div class="menu-title">HELP USERS RECOGNIZE AND RECOVER</div>
+                <div class="menu-details">
+                    <div class="highlight-box">
+                        <p>Error messages should be expressed in plain language (no codes), precisely indicate the
+                            problem, and constructively suggest a solution.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="menu-item" data-heuristic="10">
+                <div class="background-number">10.</div>
+                <div class="menu-label">UH#10</div>
+                <div class="menu-title">HELP AND DOCUMENTATION</div>
+                <div class="menu-details">
+                    <div class="highlight-box">
+                        <p>Even though it is better if the system can be used without documentation, it may be necessary
+                            to provide help and documentation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <span>Peaches Njenga</span>
+        <span class="separator">•</span>
+        <span>Sandrah Lewa</span>
+        <span class="separator">•</span>
+        <span>Ian Dancun</span>
+        <span class="separator">•</span>
+        <span>Javan Otieno</span>
+        <span class="separator">•</span>
+        <span>Daniel Karume</span>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
