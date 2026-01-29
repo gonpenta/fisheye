@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     const menuItems = document.querySelectorAll('.menu-item');
-    const fisheyeMenu = document.querySelector('.fisheye-menu');
+    const fisheyeMenu = document.querySelector('.fisheye-container');
+
 
     // Function to update menu state
     function updateMenuState() {
