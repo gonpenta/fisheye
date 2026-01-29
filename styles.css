@@ -12,19 +12,17 @@ body {
     max-height: 100vh;
     display: flex;
     flex-direction: column;
+    gap: clamp(12px, 2vw, 24px);
+    padding-inline: clamp(12px, 2vw, 40px);
     transition: padding 0.3s ease;
     overflow: hidden;
 }
 
-.header { 
-    position: fixed;
-    top: 0;
-    left: clamp(10px, 2vw, 15px);
-    right: clamp(10px, 2vw, 15px);
-    z-index: 101;
+.header {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
     background: #fff;
-    padding-top: clamp(10px, 2vw, 15px);
-    padding-bottom: clamp(6px, 1vw, 10px);
     flex-shrink: 0;
 }
 
@@ -41,17 +39,18 @@ body {
     width: 100%;
     height: 1px;
     background: #eee;
-    margin-top: 8px;
 }
 
 .container {
     max-width: 1400px;
+    width: 100%;
+    margin-inline: auto;
     flex: 1;
     display: flex;
     flex-direction: column;
+    gap: 20px;
     overflow: hidden;
     min-height: 0;
-    padding-top: clamp(160px, 20vw, 200px); /* Space for fixed header + title section */
 }
 
 .title-section {
@@ -60,30 +59,22 @@ body {
     justify-content: space-between;
     align-items: flex-end;
     gap: clamp(8px, 2vw, 20px);
-    margin-bottom: 20px;
     flex-shrink: 0;
-    position: fixed;
-    top: clamp(45px, 8vw, 60px);
-    left: clamp(10px, 2vw, 15px);
-    right: clamp(10px, 2vw, 15px);
-    z-index: 100;
     background: #fff;
-    padding-bottom: clamp(8px, 1.5vw, 12px);
-    padding-top: clamp(4px, 1vw, 8px);
 }
 
-h1 { 
-    font-size: clamp(26px, 7vw, 50px); 
-    font-weight: 900; 
-    line-height: 0.8; 
+h1 {
+    font-size: clamp(26px, 7vw, 50px);
+    font-weight: 900;
+    line-height: 0.8;
 }
 
-h2 { 
-    font-family: 'Playfair Display', serif; 
-    font-size: clamp(26px, 7vw, 50px); 
-    font-weight: 400; 
-    font-style: italic; 
-    line-height: 0.8; 
+h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(26px, 7vw, 50px);
+    font-weight: 400;
+    font-style: italic;
+    line-height: 0.8;
 }
 
 .intro {
@@ -110,7 +101,8 @@ h2 {
 
 .fisheye-row {
     display: flex;
-    flex-direction: column; /* Stacked on mobile by default */
+    flex-direction: column;
+    /* Stacked on mobile by default */
     flex: 1;
     min-height: 0;
     gap: 2px;
@@ -143,7 +135,8 @@ h2 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 5px; /* Prevents text overlay in collapsed state */
+    gap: 5px;
+    /* Prevents text overlay in collapsed state */
 }
 
 /* Collapsed main label */
@@ -176,7 +169,7 @@ h2 {
     opacity: 0;
     transform: translateY(-10px);
     transition: 0.3s;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
 /* Expanded Title */
@@ -187,6 +180,8 @@ h2 {
     display: none;
     margin-bottom: 12px;
     max-width: 100%;
+    overflow-wrap: break-word;
+    word-break: break-word;
 }
 
 /* Expanded Description */
@@ -216,7 +211,7 @@ h2 {
 
 /* --- INTERACTION STATES (HOVER & CLICK) --- */
 
-.menu-item:hover, 
+.menu-item:hover,
 .menu-item.active,
 .menu-item:focus {
     background: #f4f4f4;
@@ -225,7 +220,7 @@ h2 {
     outline: none;
 }
 
-.menu-item:hover .content, 
+.menu-item:hover .content,
 .menu-item.active .content,
 .menu-item:focus .content {
     align-items: flex-start;
@@ -234,32 +229,32 @@ h2 {
 }
 
 /* Toggle visibility between states */
-.menu-item:hover .collapsed-label, 
+.menu-item:hover .collapsed-label,
 .menu-item.active .collapsed-label,
 .menu-item:focus .collapsed-label,
-.menu-item:hover .subtitle, 
+.menu-item:hover .subtitle,
 .menu-item.active .subtitle,
 .menu-item:focus .subtitle {
     display: none;
 }
 
-.menu-item:hover .pill, 
+.menu-item:hover .pill,
 .menu-item.active .pill,
 .menu-item:focus .pill {
     opacity: 1;
     transform: translateY(0);
 }
 
-.menu-item:hover .title, 
+.menu-item:hover .title,
 .menu-item.active .title,
 .menu-item:focus .title,
-.menu-item:hover .description, 
+.menu-item:hover .description,
 .menu-item.active .description,
 .menu-item:focus .description {
     display: block;
 }
 
-.menu-item:hover .background-number, 
+.menu-item:hover .background-number,
 .menu-item.active .background-number,
 .menu-item:focus .background-number {
     opacity: 1;
@@ -273,26 +268,14 @@ h2 {
         height: 100vh;
         max-height: 100vh;
         overflow: hidden;
-    }
-
-    .header {
-        left: 40px;
-        right: 40px;
-        padding-top: clamp(12px, 2vw, 18px);
-        padding-bottom: clamp(8px, 1.5vw, 12px);
+        padding-inline: 40px;
     }
 
     .title-section {
-        left: 40px;
-        right: 40px;
-        top: clamp(50px, 6vw, 60px);
-        padding-bottom: clamp(8px, 1.5vw, 12px);
-        padding-top: clamp(4px, 1vw, 8px);
         gap: clamp(12px, 2vw, 20px);
     }
 
     .container {
-        padding-top: clamp(150px, 20vw, 190px);
         flex: 1;
         min-height: 0;
         overflow: hidden;
@@ -334,27 +317,15 @@ h2 {
 
 /* --- DESKTOP REFINEMENTS (min-width: 1280px) --- */
 @media (min-width: 1280px) {
-    .header {
-        left: clamp(40px, 8vw, 200px);
-        right: clamp(40px, 8vw, 200px);
-        padding-top: clamp(12px, 2vw, 18px);
-        padding-bottom: clamp(8px, 1.5vw, 12px);
+    body {
+        padding-inline: clamp(40px, 8vw, 200px);
     }
 
-    .title-section { 
-        top: clamp(55px, 6vw, 65px);
-        left: clamp(40px, 8vw, 200px);
-        right: clamp(40px, 8vw, 200px);
-        padding-bottom: clamp(8px, 1.5vw, 12px);
-        padding-top: clamp(4px, 1vw, 8px);
+    .title-section {
         gap: clamp(12px, 2vw, 24px);
     }
-    
-    .container {
-        padding-top: clamp(180px, 22vw, 220px);
-    }
 
-    .fisheye-container { 
+    .fisheye-container {
         flex: 1;
         min-height: 0;
         border-radius: 0;
@@ -368,19 +339,19 @@ h2 {
         transition: flex 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
-    .fisheye-row:hover { 
+    .fisheye-row:hover {
         flex: 1.4;
     }
 
-    .menu-item { 
-        flex: 1; 
+    .menu-item {
+        flex: 1;
         min-height: 0;
         border-radius: 0;
         box-shadow: none;
         border: 1px solid #eee;
     }
 
-    .menu-item:hover, 
+    .menu-item:hover,
     .menu-item.active {
         flex-grow: 2;
         min-height: 0;
@@ -399,7 +370,7 @@ h2 {
 /* --- FOOTER --- */
 footer {
     margin-top: auto;
-    padding: 20px 0 8px;
+    padding-block: clamp(12px, 2vw, 20px);
     text-align: center;
     font-size: clamp(10px, 1.2vw, 11px);
     color: #888;
@@ -416,24 +387,13 @@ footer {
         max-height: none;
         overflow-x: hidden;
         overflow-y: auto;
-    }
-
-    .header {
-        left: 14px;
-        right: 14px;
-        padding-top: 12px;
-        padding-bottom: 8px;
+        padding-inline: 14px;
     }
 
     .title-section {
-        left: 14px;
-        right: 14px;
-        top: clamp(48px, 6vw, 55px);
         flex-direction: row;
         align-items: flex-end;
         gap: 16px;
-        padding-bottom: 12px;
-        padding-top: 6px;
     }
 
     .intro {
@@ -443,7 +403,6 @@ footer {
     }
 
     .container {
-        padding-top: clamp(140px, 18vw, 170px);
         flex: none;
         min-height: auto;
         overflow: visible;
@@ -453,15 +412,20 @@ footer {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 12px;
-        padding: 12px;
         border-radius: 18px;
         flex: none;
         min-height: auto;
         overflow: visible;
+        width: 100%;
+        margin-inline: auto;
     }
 
     .fisheye-row {
         display: contents;
+    }
+
+    .menu-item .content {
+        min-width: 0;
     }
 
     .menu-item {
@@ -487,7 +451,6 @@ footer {
     .fisheye-container {
         grid-template-columns: repeat(2, 1fr);
         gap: 12px;
-        padding: 12px;
     }
 
     .menu-item {
@@ -519,13 +482,10 @@ footer {
         max-height: none;
         overflow-x: hidden;
         overflow-y: auto;
+        padding-inline: 12px;
     }
 
     .header {
-        left: 12px;
-        right: 12px;
-        padding-top: 12px;
-        padding-bottom: 8px;
         backdrop-filter: blur(10px);
         background: rgba(255, 255, 255, 0.95);
         border-bottom: 1px solid rgba(0, 0, 0, 0.05);
@@ -541,19 +501,10 @@ footer {
         height: 14px;
     }
 
-    .logo-separator {
-        margin-top: 6px;
-    }
-
     .title-section {
-        top: clamp(45px, 7vw, 52px);
-        left: 12px;
-        right: 12px;
         flex-direction: column;
         align-items: flex-start;
         gap: clamp(8px, 2vw, 12px);
-        padding-bottom: clamp(10px, 2vw, 14px);
-        padding-top: clamp(4px, 1vw, 8px);
         backdrop-filter: blur(10px);
         background: rgba(255, 255, 255, 0.95);
         border-bottom: 1px solid rgba(0, 0, 0, 0.05);
@@ -578,7 +529,6 @@ footer {
     }
 
     .container {
-        padding-top: clamp(140px, 18vw, 170px);
         padding-left: 0;
         padding-right: 0;
         flex: none;
@@ -601,7 +551,8 @@ footer {
     }
 
     .fisheye-row {
-        display: contents; /* Flatten rows for grid layout */
+        display: contents;
+        /* Flatten rows for grid layout */
     }
 
     .menu-item {
@@ -649,6 +600,10 @@ footer {
         border-color: rgba(0, 0, 0, 0.06);
     }
 
+    .menu-item .content {
+        min-width: 0;
+    }
+
     .content {
         gap: 8px;
     }
@@ -679,6 +634,8 @@ footer {
         margin-bottom: 12px;
         line-height: 1.25;
         letter-spacing: -0.3px;
+        overflow-wrap: break-word;
+        word-break: break-word;
     }
 
     .description {
@@ -702,10 +659,9 @@ footer {
     }
 
     footer {
-        padding: 24px 12px 16px;
+        padding-block: 16px;
         font-size: 10px;
         border-top: 1px solid rgba(0, 0, 0, 0.06);
-        margin-top: 20px;
         flex: none;
         position: relative;
     }
@@ -719,13 +675,7 @@ footer {
         max-height: none;
         overflow-x: hidden;
         overflow-y: auto;
-    }
-
-    .header {
-        left: 10px;
-        right: 10px;
-        padding-top: 10px;
-        padding-bottom: 6px;
+        padding-inline: 10px;
     }
 
     .logo {
@@ -739,12 +689,7 @@ footer {
     }
 
     .title-section {
-        top: clamp(0px, 6vw, 48px);
-        left: 10px;
-        right: 10px;
         gap: clamp(6px, 1.5vw, 10px);
-        padding-bottom: clamp(8px, 1.5vw, 12px);
-        padding-top: clamp(20px, 1vw, 6px);
     }
 
     h1 {
@@ -760,22 +705,28 @@ footer {
     }
 
     .container {
-        padding-top: clamp(130px, 16vw, 160px);
         flex: none;
         min-height: auto;
         overflow: visible;
+        width: 100%;
     }
 
     .fisheye-container {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
-        padding: 58px 0px 0PX;
         gap: 8px;
         border-radius: 12px;
+        width: 100%;
+        margin-inline: auto;
     }
 
     .fisheye-row {
-        display: contents; /* Flatten rows for grid layout */
+        display: contents;
+        /* Flatten rows for grid layout */
+    }
+
+    .menu-item .content {
+        min-width: 0;
     }
 
     .menu-item {
@@ -807,6 +758,8 @@ footer {
     .title {
         font-size: clamp(16px, 6vw, 22px);
         margin-bottom: 10px;
+        overflow-wrap: break-word;
+        word-break: break-word;
     }
 
     .description {
