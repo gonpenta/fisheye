@@ -8,7 +8,6 @@ body {
     font-family: 'Inter', -apple-system, sans-serif;
     background-color: #fff;
     color: #333;
-    padding: 15px 15px; /* Default mobile padding */
     height: 100vh;
     max-height: 100vh;
     display: flex;
@@ -271,7 +270,6 @@ h2 {
 /* --- LARGE TABLET / SMALL DESKTOP (min-width: 1024px, max-width: 1279px) --- */
 @media (min-width: 1024px) and (max-width: 1279px) {
     body {
-        padding: 15px 40px;
         height: 100vh;
         max-height: 100vh;
         overflow: hidden;
@@ -336,10 +334,6 @@ h2 {
 
 /* --- DESKTOP REFINEMENTS (min-width: 1280px) --- */
 @media (min-width: 1280px) {
-    body { 
-        padding: 15px clamp(40px, 8vw, 200px);
-    }
-
     .header {
         left: clamp(40px, 8vw, 200px);
         right: clamp(40px, 8vw, 200px);
@@ -417,7 +411,6 @@ footer {
 /* --- TABLET STYLING (max-width: 1023px, min-width: 768px) --- */
 @media (max-width: 1023px) and (min-width: 768px) {
     body {
-        padding: 14px;
         height: auto;
         min-height: 100vh;
         max-height: none;
@@ -521,7 +514,6 @@ footer {
 /* --- MOBILE STYLING (max-width: 1023px) --- */
 @media (max-width: 1023px) {
     body {
-        padding: 12px;
         height: auto;
         min-height: 100vh;
         max-height: none;
