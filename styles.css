@@ -1,3 +1,4 @@
+/* --- GLOBAL RESET & BASE STYLES --- */
 * {
     margin: 0;
     padding: 0;
@@ -8,83 +9,65 @@ body {
     font-family: 'Inter', -apple-system, sans-serif;
     background-color: #fff;
     color: #333;
-    height: 100vh;
-    max-height: 100vh;
+    padding: 20px 20px; /* Default mobile padding */
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    gap: clamp(12px, 2vw, 24px);
-    padding-inline: clamp(12px, 2vw, 40px);
     transition: padding 0.3s ease;
-    overflow: hidden;
 }
 
-.header {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    background: #fff;
-    flex-shrink: 0;
+/* --- HEADER --- */
+.header { 
+    margin-bottom: 20px; 
 }
 
 .logo {
     display: flex;
     align-items: center;
-    gap: 8px;
-    font-size: 10px;
+    gap: 10px;
+    font-size: 11px;
     font-weight: 900;
-    letter-spacing: 0.8px;
+    letter-spacing: 1px;
 }
 
 .logo-separator {
     width: 100%;
     height: 1px;
     background: #eee;
+    margin-top: 10px;
 }
 
-.container {
-    max-width: 1400px;
-    width: 100%;
-    margin-inline: auto;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    overflow: hidden;
-    min-height: 0;
-}
-
+/* --- TITLE SECTION --- */
 .title-section {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
-    align-items: flex-end;
-    gap: clamp(8px, 2vw, 20px);
-    flex-shrink: 0;
-    background: #fff;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 30px;
 }
 
-h1 {
-    font-size: clamp(26px, 7vw, 50px);
-    font-weight: 900;
-    line-height: 0.8;
+h1 { 
+    font-size: clamp(32px, 8vw, 60px); 
+    font-weight: 900; 
+    line-height: 0.8; 
 }
 
-h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(26px, 7vw, 50px);
-    font-weight: 400;
-    font-style: italic;
-    line-height: 0.8;
+h2 { 
+    font-family: 'Playfair Display', serif; 
+    font-size: clamp(32px, 8vw, 60px); 
+    font-weight: 400; 
+    font-style: italic; 
+    line-height: 0.8; 
 }
 
 .intro {
-    max-width: 450px;
-    text-align: right;
+    max-width: 100%;
+    text-align: left;
     font-family: 'Playfair Display', serif;
     font-style: italic;
     color: #666;
-    font-size: clamp(12px, 1.8vw, 14px);
-    margin-left: auto;
+    font-size: clamp(13px, 2vw, 15px);
 }
 
 /* --- FISHEYE LAYOUT --- */
@@ -94,17 +77,13 @@ h2 {
     gap: 2px;
     background: #ffffff;
     border: 1px solid #eee;
-    flex: 1;
-    min-height: 0;
-    overflow: hidden;
+    height: auto; /* Stacks naturally on mobile */
 }
 
 .fisheye-row {
     display: flex;
-    flex-direction: column;
-    /* Stacked on mobile by default */
-    flex: 1;
-    min-height: 0;
+    flex-direction: column; /* Stacked on mobile by default */
+    height: auto;
     gap: 2px;
     background: #ffffff;
 }
@@ -113,7 +92,7 @@ h2 {
     flex: 1;
     background: #f9f9f9;
     position: relative;
-    padding: 20px;
+    padding: 30px;
     overflow: hidden;
     cursor: pointer;
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
@@ -121,8 +100,7 @@ h2 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 0;
-    will-change: transform;
+    min-height: 120px;
 }
 
 /* --- CARD CONTENT --- */
@@ -135,13 +113,12 @@ h2 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 5px;
-    /* Prevents text overlay in collapsed state */
+    gap: 5px; /* Prevents text overlay in collapsed state */
 }
 
 /* Collapsed main label */
 .collapsed-label {
-    font-size: clamp(26px, 4.5vw, 40px);
+    font-size: clamp(32px, 5vw, 48px);
     font-weight: 900;
     transition: 0.3s;
     line-height: 1;
@@ -150,7 +127,7 @@ h2 {
 
 /* Subtitle (Small label at bottom) */
 .subtitle {
-    font-size: 8px;
+    font-size: 9px;
     font-weight: 700;
     color: #999;
     text-transform: uppercase;
@@ -161,34 +138,32 @@ h2 {
 /* Pill (UH#01) - only visible on expansion */
 .pill {
     background: #fff;
-    padding: 3px 10px;
+    padding: 4px 12px;
     border-radius: 50px;
-    font-size: 10px;
+    font-size: 11px;
     font-weight: 900;
-    margin-bottom: 16px;
+    margin-bottom: 20px;
     opacity: 0;
     transform: translateY(-10px);
     transition: 0.3s;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
 /* Expanded Title */
 .title {
-    font-size: clamp(18px, 3.5vw, 28px);
+    font-size: clamp(20px, 4vw, 32px);
     font-weight: 900;
     line-height: 1.1;
     display: none;
-    margin-bottom: 12px;
+    margin-bottom: 15px;
     max-width: 100%;
-    overflow-wrap: break-word;
-    word-break: break-word;
 }
 
 /* Expanded Description */
 .description {
     font-family: 'Playfair Display', serif;
     font-style: italic;
-    font-size: clamp(13px, 2.2vw, 16px);
+    font-size: clamp(14px, 2.5vw, 18px);
     line-height: 1.4;
     color: #333;
     display: none;
@@ -198,9 +173,9 @@ h2 {
 /* Background Number (The big ghost "01.") */
 .background-number {
     position: absolute;
-    bottom: -8px;
-    left: -8px;
-    font-size: clamp(80px, 12vw, 160px);
+    bottom: -10px;
+    left: -10px;
+    font-size: clamp(100px, 15vw, 200px);
     font-weight: 900;
     color: #eee;
     opacity: 0;
@@ -211,559 +186,91 @@ h2 {
 
 /* --- INTERACTION STATES (HOVER & CLICK) --- */
 
-.menu-item:hover,
-.menu-item.active,
-.menu-item:focus {
+.menu-item:hover, 
+.menu-item.active {
     background: #f4f4f4;
+    min-height: 300px; /* Vertical growth for mobile expansion */
     align-items: flex-start;
     justify-content: flex-start;
-    outline: none;
 }
 
-.menu-item:hover .content,
-.menu-item.active .content,
-.menu-item:focus .content {
+.menu-item:hover .content, 
+.menu-item.active .content {
     align-items: flex-start;
     justify-content: flex-start;
-    gap: 8px;
+    gap: 10px;
 }
 
 /* Toggle visibility between states */
-.menu-item:hover .collapsed-label,
-.menu-item.active .collapsed-label,
-.menu-item:focus .collapsed-label,
-.menu-item:hover .subtitle,
-.menu-item.active .subtitle,
-.menu-item:focus .subtitle {
+.menu-item:hover .collapsed-label, .menu-item.active .collapsed-label,
+.menu-item:hover .subtitle, .menu-item.active .subtitle {
     display: none;
 }
 
-.menu-item:hover .pill,
-.menu-item.active .pill,
-.menu-item:focus .pill {
+.menu-item:hover .pill, .menu-item.active .pill {
     opacity: 1;
     transform: translateY(0);
 }
 
-.menu-item:hover .title,
-.menu-item.active .title,
-.menu-item:focus .title,
-.menu-item:hover .description,
-.menu-item.active .description,
-.menu-item:focus .description {
+.menu-item:hover .title, .menu-item.active .title,
+.menu-item:hover .description, .menu-item.active .description {
     display: block;
 }
 
-.menu-item:hover .background-number,
-.menu-item.active .background-number,
-.menu-item:focus .background-number {
+.menu-item:hover .background-number, .menu-item.active .background-number {
     opacity: 1;
-    transform: translate(24px, -16px);
+    transform: translate(30px, -20px);
 }
 
-
-/* --- LARGE TABLET / SMALL DESKTOP (min-width: 1024px, max-width: 1279px) --- */
-@media (min-width: 1024px) and (max-width: 1279px) {
-    body {
-        height: 100vh;
-        max-height: 100vh;
-        overflow: hidden;
-        padding-inline: 40px;
+/* --- DESKTOP REFINEMENTS (min-width: 1024px) --- */
+@media (min-width: 1024px) {
+    body { 
+        padding: 20px 200px; /* Wide padding from your original design */
     }
 
-    .title-section {
-        gap: clamp(12px, 2vw, 20px);
+    .title-section { 
+        flex-direction: row; 
+        align-items: flex-end; 
     }
 
-    .container {
-        flex: 1;
-        min-height: 0;
-        overflow: hidden;
+    .intro { 
+        text-align: right; 
+        max-width: 450px; 
     }
 
-    .fisheye-container {
-        flex: 1;
-        min-height: 0;
-        gap: 4px;
-        display: flex;
-        flex-direction: column;
+    .fisheye-container { 
+        height: 70vh; 
     }
 
     .fisheye-row {
-        flex-direction: row;
-        flex: 1;
-        min-height: 0;
-        gap: 4px;
-        transition: flex 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        flex-direction: row; /* Horizontal grid on desktop */
+        height: 50%; /* Base height */
+        transition: height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
-    .fisheye-row:hover {
-        flex: 1.4;
+    /* Vertical expansion of the entire row on desktop */
+    .fisheye-row:hover { 
+        height: 70%; 
     }
 
-    .menu-item {
-        flex: 1;
-        min-height: 0;
-        padding: 18px;
+    .menu-item { 
+        flex: 1; 
+        min-height: 0; 
     }
 
-    .menu-item:hover,
-    .menu-item.active {
+    /* Horizontal expansion on desktop */
+    .menu-item:hover, .menu-item.active {
         flex-grow: 2;
         min-height: 0;
-        z-index: 10;
-    }
-}
-
-/* --- DESKTOP REFINEMENTS (min-width: 1280px) --- */
-@media (min-width: 1280px) {
-    body {
-        padding-inline: clamp(40px, 8vw, 200px);
-    }
-
-    .title-section {
-        gap: clamp(12px, 2vw, 24px);
-    }
-
-    .fisheye-container {
-        flex: 1;
-        min-height: 0;
-        border-radius: 0;
-        border: 1px solid #eee;
-    }
-
-    .fisheye-row {
-        flex-direction: row;
-        flex: 1;
-        min-height: 0;
-        transition: flex 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    .fisheye-row:hover {
-        flex: 1.4;
-    }
-
-    .menu-item {
-        flex: 1;
-        min-height: 0;
-        border-radius: 0;
-        box-shadow: none;
-        border: 1px solid #eee;
-    }
-
-    .menu-item:hover,
-    .menu-item.active {
-        flex-grow: 2;
-        min-height: 0;
-        z-index: 10;
-    }
-}
-
-/* --- LARGE DESKTOP (min-width: 1600px) --- */
-@media (min-width: 1600px) {
-    .container {
-        max-width: 1600px;
     }
 }
 
 /* --- FOOTER --- */
 footer {
     margin-top: auto;
-    padding-block: clamp(12px, 2vw, 20px);
+    padding: 40px 0 10px;
     text-align: center;
-    font-size: clamp(10px, 1.2vw, 11px);
+    font-size: 12px;
     color: #888;
     border-top: 1px solid #eee;
-    flex-shrink: 0;
-    line-height: 1.6;
-}
-
-/* --- TABLET STYLING (max-width: 1023px, min-width: 768px) --- */
-@media (max-width: 1023px) and (min-width: 768px) {
-    body {
-        height: auto;
-        min-height: 100vh;
-        max-height: none;
-        overflow-x: hidden;
-        overflow-y: auto;
-        padding-inline: 14px;
-    }
-
-    .title-section {
-        flex-direction: row;
-        align-items: flex-end;
-        gap: 16px;
-    }
-
-    .intro {
-        max-width: 350px;
-        text-align: right;
-        margin-left: auto;
-    }
-
-    .container {
-        flex: none;
-        min-height: auto;
-        overflow: visible;
-    }
-
-    .fisheye-container {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 12px;
-        border-radius: 18px;
-        flex: none;
-        min-height: auto;
-        overflow: visible;
-        width: 100%;
-        margin-inline: auto;
-    }
-
-    .fisheye-row {
-        display: contents;
-    }
-
-    .menu-item .content {
-        min-width: 0;
-    }
-
-    .menu-item {
-        min-height: 110px;
-        padding: 22px 20px;
-    }
-
-    .collapsed-label {
-        font-size: clamp(28px, 5vw, 38px);
-    }
-
-    .title {
-        font-size: clamp(19px, 4vw, 26px);
-    }
-
-    .description {
-        font-size: clamp(14px, 3.5vw, 16px);
-    }
-}
-
-/* --- MEDIUM TABLET (max-width: 767px, min-width: 481px) --- */
-@media (max-width: 767px) and (min-width: 481px) {
-    .fisheye-container {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 12px;
-    }
-
-    .menu-item {
-        min-height: 105px;
-        padding: 22px 20px;
-    }
-
-    .collapsed-label {
-        font-size: clamp(26px, 6.5vw, 34px);
-    }
-
-    .title-section {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .intro {
-        max-width: 100%;
-        text-align: left;
-        margin-left: 0;
-    }
-}
-
-/* --- MOBILE STYLING (max-width: 1023px) --- */
-@media (max-width: 1023px) {
-    body {
-        height: auto;
-        min-height: 100vh;
-        max-height: none;
-        overflow-x: hidden;
-        overflow-y: auto;
-        padding-inline: 12px;
-    }
-
-    .header {
-        backdrop-filter: blur(10px);
-        background: rgba(255, 255, 255, 0.95);
-        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-    }
-
-    .logo {
-        font-size: 9px;
-        gap: 6px;
-    }
-
-    .logo svg {
-        width: 14px;
-        height: 14px;
-    }
-
-    .title-section {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: clamp(8px, 2vw, 12px);
-        backdrop-filter: blur(10px);
-        background: rgba(255, 255, 255, 0.95);
-        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-    }
-
-    h1 {
-        font-size: clamp(24px, 8vw, 32px);
-        line-height: 0.9;
-    }
-
-    h2 {
-        font-size: clamp(24px, 8vw, 32px);
-        line-height: 0.9;
-    }
-
-    .intro {
-        max-width: 100%;
-        text-align: left;
-        font-size: clamp(11px, 3.5vw, 13px);
-        line-height: 1.5;
-        margin-left: 0;
-    }
-
-    .container {
-        padding-left: 0;
-        padding-right: 0;
-        flex: none;
-        min-height: auto;
-        overflow: visible;
-    }
-
-    .fisheye-container {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 10px;
-        padding: 10px;
-        border-radius: 16px;
-        border: none;
-        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
-        background: linear-gradient(to bottom, #fafafa, #ffffff);
-        flex: none;
-        min-height: auto;
-        overflow: visible;
-    }
-
-    .fisheye-row {
-        display: contents;
-        /* Flatten rows for grid layout */
-    }
-
-    .menu-item {
-        padding: 20px 18px;
-        border-radius: 14px;
-        background: #ffffff;
-        min-height: 100px;
-        transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-        -webkit-tap-highlight-color: transparent;
-        border: 1px solid rgba(0, 0, 0, 0.03);
-        position: relative;
-    }
-
-    .menu-item::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        border-radius: 14px;
-        background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.4));
-        opacity: 0;
-        transition: opacity 0.3s ease;
-        pointer-events: none;
-    }
-
-    .menu-item:active {
-        transform: scale(0.97);
-    }
-
-    .menu-item:active::before {
-        opacity: 1;
-    }
-
-    .menu-item:hover,
-    .menu-item.active {
-        background: #ffffff;
-        min-height: auto;
-        padding: 24px 20px;
-        transform: translateY(-2px);
-        border-color: rgba(0, 0, 0, 0.06);
-    }
-
-    .menu-item .content {
-        min-width: 0;
-    }
-
-    .content {
-        gap: 8px;
-    }
-
-    .collapsed-label {
-        font-size: clamp(24px, 7vw, 36px);
-        letter-spacing: -0.5px;
-    }
-
-    .subtitle {
-        font-size: 8px;
-        margin-top: 6px;
-        letter-spacing: 0.5px;
-        opacity: 0.7;
-    }
-
-    .pill {
-        padding: 5px 14px;
-        font-size: 10px;
-        margin-bottom: 14px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        background: linear-gradient(135deg, #ffffff, #f8f8f8);
-        border: 1px solid rgba(0, 0, 0, 0.05);
-    }
-
-    .title {
-        font-size: clamp(18px, 5.5vw, 24px);
-        margin-bottom: 12px;
-        line-height: 1.25;
-        letter-spacing: -0.3px;
-        overflow-wrap: break-word;
-        word-break: break-word;
-    }
-
-    .description {
-        font-size: clamp(13px, 4vw, 15px);
-        line-height: 1.6;
-        max-width: 100%;
-        color: #444;
-    }
-
-    .background-number {
-        font-size: clamp(70px, 22vw, 140px);
-        bottom: -8px;
-        left: -8px;
-        opacity: 0.3;
-    }
-
-    .menu-item:hover .background-number,
-    .menu-item.active .background-number {
-        transform: translate(20px, -16px);
-        opacity: 0.4;
-    }
-
-    footer {
-        padding-block: 16px;
-        font-size: 10px;
-        border-top: 1px solid rgba(0, 0, 0, 0.06);
-        flex: none;
-        position: relative;
-    }
-}
-
-/* --- SMALL MOBILE (max-width: 480px) --- */
-@media (max-width: 480px) {
-    body {
-        height: auto;
-        min-height: 100vh;
-        max-height: none;
-        overflow-x: hidden;
-        overflow-y: auto;
-        padding-inline: 10px;
-    }
-
-    .logo {
-        font-size: 8px;
-        gap: 5px;
-    }
-
-    .logo svg {
-        width: 12px;
-        height: 12px;
-    }
-
-    .title-section {
-        gap: clamp(6px, 1.5vw, 10px);
-    }
-
-    h1 {
-        font-size: clamp(20px, 9vw, 28px);
-    }
-
-    h2 {
-        font-size: clamp(20px, 9vw, 28px);
-    }
-
-    .intro {
-        font-size: clamp(10px, 4vw, 12px);
-    }
-
-    .container {
-        flex: none;
-        min-height: auto;
-        overflow: visible;
-        width: 100%;
-    }
-
-    .fisheye-container {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 8px;
-        border-radius: 12px;
-        width: 100%;
-        margin-inline: auto;
-    }
-
-    .fisheye-row {
-        display: contents;
-        /* Flatten rows for grid layout */
-    }
-
-    .menu-item .content {
-        min-width: 0;
-    }
-
-    .menu-item {
-        padding: 18px 16px;
-        min-height: 90px;
-        border-radius: 12px;
-    }
-
-    .menu-item:hover,
-    .menu-item.active {
-        padding: 22px 18px;
-        transform: translateY(-1px);
-    }
-
-    .collapsed-label {
-        font-size: clamp(22px, 8vw, 32px);
-    }
-
-    .subtitle {
-        font-size: 7px;
-    }
-
-    .pill {
-        padding: 4px 12px;
-        font-size: 9px;
-        margin-bottom: 12px;
-    }
-
-    .title {
-        font-size: clamp(16px, 6vw, 22px);
-        margin-bottom: 10px;
-        overflow-wrap: break-word;
-        word-break: break-word;
-    }
-
-    .description {
-        font-size: clamp(12px, 4.5vw, 14px);
-        line-height: 1.5;
-    }
-
-    .background-number {
-        font-size: clamp(60px, 25vw, 120px);
-    }
 }
